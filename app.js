@@ -6,119 +6,88 @@ const cards = document.getElementsByClassName('card');
 const board = document.getElementsByClassName('board');
 const boardArray =Array.from(cards);
 
-console.log(boardArray);
-console.log(cards);
-console.log(board);
 
-messegeEl.textContent= ("Lets's Begin");
 
-/* variables
+const values = ["A","A","B","B","C","C","D","D","E","E","F","F"];
+
+const matchingPair=[
+    ["A","A"],["B","B"],["C","C"],["D","D"],["E","E"],["F","F"]];
+
+
+/* variables************************************************************************
 */
-
-
 matches =0;
 attempts =0;
 firstPick=null;
 secondPick =null;
 win=false;
-
-const values = ["A","A","B","B","C","C","D","D","E","E","F","F"];
-
-
-
-
-
-//const shuffledValues = values.sort(() => Math.random() - 0.5);
+CurrentCardValue ="";
+firstCardPick=""
+secondCardPick=""
+let PlayerAttempts = ["","","","","","","","",""];
 
 
-{console.log(values[1]);
-}
 
 
-matchingPair=[
-    ["1","1"],["2","2"],["3","3"],["4","4"],["5","5"],["6","6"]
-];
+
+///
 
 /*
-functions
-renderCards(): Render the cards on the board.
-flipCard(card): Handle card flipping logic.
-checkMatch(): Check if two selected cards match.
-resetPicks(): Reset the picks after an attempt.
-updateAttempts(): Update the attempt count.
-displayMessage(message): Display win/lose messages.
-
-
+*************************functions  *********************************************************************************
 */
 
-// shuffleCards();
-// flipCard(card) ;
-// resetPicks();
-// updateAttempts();
-  
-  //: //Shuffle the cards array.
 
-init=() => {
-matches =0;
-attempts =0;
-firstPick=null;
-secondPick =null;
-messegeEl.textContent= ("Let's go ");
-shuffleArray(values);
-console.log("game initialized","matches",matches=0,"attempts",attempts=0,);
-assignValues(cards,values);
+  /*   ******/// Shuffle the cards array//*************** */
 
+function init() {
+    let matches = 0;
+    let attempts = 0;
+    let firstPick = null;
+    let secondPick = null;
+    let win = false;
+    let PlayerAttempts = ["","","","","","","","",""];
+
+    shuffleArray(values);
+    console.log("game initialized", "matches", matches = 0, "attempts", attempts = 0);
+    assignValues(cards, values);
+    render();
 }
-
-render=() => {
-    updateBoard();
+/*
+******************** (Render status updates) ********************************
+*/
+const render= () => {
     updateMessage();
-    }
-
-    const updateBoard = () => {
     };
+
+    /* ********( update messages) *****************************************
+*/
+
+
+    let updateMessage = () => {
     
-foundMatch=() => {
-
-};
-
-
-firstPick=()=>{
-   
-};
-
-const handleClick = (event) => {
-    const clickedCard = event.target;
-    const index = Array.from(cards).indexOf(clickedCard);
-    console.log('Clicked card index:', index);
-    console.log(clickedCard.innerText)
-
-
-  
+        if (matches >= 1 )
+            
+            messegeEl.textContent = "You win";
+        }
     
 
 
-};
+//****** (function to assign values to cards)  *****************************************************
 
-//function to assign values to cards
 
-const assignValues= (cards ,values)=>{
-    if (cards.length === values.length)
-        {console.log("Values initialized")
-    }
+const assignValues= (cards ,values)=>
+    {
 
-    Array.from(cards).forEach((card, index) => {
-        card.setAttribute('data-value', values[index]);
-        
+
+    boardArray.forEach((card, index) => {
         card.textContent = values[index];
 
     });
 
     
-
 };
 
-/// function to randomize 
+/// **************  function to randomize  *************************************************
 
 
 function shuffleArray(values) {
@@ -129,16 +98,92 @@ function shuffleArray(values) {
 }
 
 
+
+/*  ************  (update board) *******************/
+
+
+
+
+
+
+
+
+  //*********** (handle click events)**************************
+const handleClick = (event) => {
+
+    const clickedCard = event.target;
+
+    if (firstPick || secondPick);
+    flipCard(clickedCard)
+
+
+    if (!firstPick) {
+        firstPick = clickedCard;
+        CurrentCardValue = clickedCard.innerText;
+    } else {
+        secondPick = clickedCard;
+        CurrentCardValue=clickedCard.innerText;
+
+        checkForMatch();
+  
+    }
+};
+
+/* ************* (function to flip cards)  */
+
+function flipCard(card) {
+    card.classList.add('flipped');
+    
+}
+
+
+/*   ************ (Unflip Cards) ******************/
+
+function unFlip(card, delay = 500) {
+
+    setTimeout(() => {
+        card.classList.remove('flipped');
+    }, delay); 
+
+}
+/* *************** (function check for match)*****************************************
+*/
+function checkForMatch() {
+    if (firstPick && secondPick) {
+        const firstCardValue = firstPick.innerText;
+        const secondCardValue = secondPick.innerText;
+
+        if (firstCardValue === secondCardValue) {
+            matches++;
+            console.log(matches,"you got a match");
+            firstPick=null;
+            secondPick=null;
+
+
+        } else {
+            unFlip(firstPick);
+            unFlip(secondPick);
+
+        
+        firstPick = null;
+        secondPick = null;
+    }}
+}
+
+
+
+
 /*
-event Listners 
+***************** (event Listners) ********************************************************************************
 */
 document.addEventListener('DOMContentLoaded', function() {
     init();
 });
 
-// click board 
+// ********* click board ******************************************
 boardArray.forEach(card => {
     card.addEventListener('click', handleClick);
 
 });
 
+        

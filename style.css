@@ -18,4 +18,11 @@ body {
     border: 3px solid black;
     font-size: 64px;
     text-align: center;
+    color:transparent;
+    
+  }
+
+  .card.flipped {
+color:black
+ 
   }
