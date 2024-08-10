@@ -1,10 +1,10 @@
-
 /*constants 
 */ 
 const messegeEl = document.getElementById('message')
 const cards = document.getElementsByClassName('card');
 const board = document.getElementsByClassName('board');
 const boardArray =Array.from(cards);
+const messegeEl2 = document.getElementById('message2')
 
 
 
@@ -50,28 +50,57 @@ function init() {
     shuffleArray(values);
     console.log("game initialized", "matches", matches = 0, "attempts", attempts = 0);
     assignValues(cards, values);
-    render();
+     render();
 }
 /*
 ******************** (Render status updates) ********************************
 */
 const render= () => {
     updateMessage();
+    updateMessage2();
+
     };
 
     /* ********( update messages) *****************************************
 */
 
 
-    let updateMessage = () => {
-    
-        if (matches >= 1 )
-            
-            messegeEl.textContent = "You win";
-        }
-    
+const updateMessage = () => {
+    if (matches === 6) {
+        messegeEl.textContent = "You win!!!";
+    } else if (matches >= 4) {
+        messegeEl.textContent = "You got this!";
+    } else if (matches >= 2) {
+        messegeEl.textContent = "Almost there!";
+    } else if (matches >= 1) {
+        messegeEl.textContent = "Keep going!";
+    } else if (matches>=2) {
+        messegeEl.textContent = "Let's Go"; 
+    } else 
+        messegeEl.textContent ="Think you got what it takes?";
+    };
 
+    const updateMessage2 = () => {
+        if (attempts === 0) {
+            messegeEl2.textContent = "8 attempts";
+        }  if (attempts >= 1) {
+            messegeEl2.textContent = "1st Attempt!";
 
+        }  if (attempts >= 2) {
+            messegeEl2.textContent = "2nd Attempt";
+        }  if (attempts >= 3) {
+            messegeEl2.textContent = "3rd Attempt";
+        }  if (attempts >= 4) {
+            messegeEl2.textContent = "4th Attempt";
+        }  if (attempts >= 5) {
+            messegeEl2.textContent = "5th Attempt";
+        } if (attempts>=6) {
+            messegeEl2.textContent = "6th Attempt"; 
+        } if (attempts>=7) {
+            messegeEl2.textContent = "last Attempt"; 
+        }  if (attempts>= 8)
+            messegeEl2.textContent ="You lose";
+        };
 //****** (function to assign values to cards)  *****************************************************
 
 
@@ -114,7 +143,8 @@ const handleClick = (event) => {
     const clickedCard = event.target;
 
     if (firstPick || secondPick);
-    flipCard(clickedCard)
+    flipCard(clickedCard);
+
 
 
     if (!firstPick) {
@@ -125,7 +155,6 @@ const handleClick = (event) => {
         CurrentCardValue=clickedCard.innerText;
 
         checkForMatch();
-  
     }
 };
 
@@ -154,13 +183,14 @@ function checkForMatch() {
         const secondCardValue = secondPick.innerText;
 
         if (firstCardValue === secondCardValue) {
-            matches++;
+            matches++ && attempts++;
             console.log(matches,"you got a match");
             firstPick=null;
             secondPick=null;
-
+            render();
 
         } else {
+            attempts++;
             unFlip(firstPick);
             unFlip(secondPick);
 
