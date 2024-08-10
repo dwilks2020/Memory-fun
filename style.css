@@ -1,28 +1,77 @@
 body {
-    background-color: pink;
-    /* Use a system font, if none are available use an available sans-sarif */
-    font-family: system-ui, sans-serif;
-    margin: 200;
-  }
-  
-  .board {
-    display: flex;
-    justify-content: space-between;    
-    flex-wrap: wrap;
-    width: 425px;
-  }
-  
-  .card {
-    width: 30%;
-    aspect-ratio: 1/1;
-    border: 3px solid black;
-    font-size: 64px;
-    text-align: center;
-    color:transparent;
-    
-  }
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f75fbf;
+  margin: 0;
+  padding: 0;
+}
 
-  .card.flipped {
-color:black
- 
-  }
+h1 {
+  color: #000000;
+  margin: 20px 0;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #ffffff;
+  font-size: 1.5em;
+  margin: 20px 0;
+}
+
+h3 {
+  color: #2222e1;
+  font-size: 1.5em;
+  margin: 20px 0;
+}
+
+
+.button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin: 20px;
+}
+
+
+.board {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 425px;
+  margin: 0 auto; 
+  gap: 10px; 
+}
+
+.card {
+  width: 30%;
+  aspect-ratio: 1 / 1;
+  border: 3px solid black;
+  font-size: 64px;
+  text-align: center;
+  color: transparent;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.card.flipped {
+  color: black;
+  background-color: #e0e0e0;
+  transform: scale(1.1);
+}
+
+img {
+  max-width: 30%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
