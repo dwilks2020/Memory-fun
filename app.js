@@ -81,26 +81,12 @@ const updateMessage = () => {
     };
 
     const updateMessage2 = () => {
-        if (attempts === 0) {
-            messegeEl2.textContent = "8 attempts";
-        }  if (attempts >= 1) {
-            messegeEl2.textContent = "1st Attempt!";
-
-        }  if (attempts >= 2) {
-            messegeEl2.textContent = "2nd Attempt";
-        }  if (attempts >= 3) {
-            messegeEl2.textContent = "3rd Attempt";
-        }  if (attempts >= 4) {
-            messegeEl2.textContent = "4th Attempt";
-        }  if (attempts >= 5) {
-            messegeEl2.textContent = "5th Attempt";
-        } if (attempts>=6) {
-            messegeEl2.textContent = "6th Attempt"; 
-        } if (attempts>=7) {
-            messegeEl2.textContent = "last Attempt"; 
-        }  if (attempts>= 8)
-            messegeEl2.textContent ="You lose";
-        };
+        if (attempts >= 8) {
+            messegeEl2.textContent = "You lose!";
+        } else {
+            messegeEl2.textContent = `${8 - attempts} attempts`;
+        }
+    };
 //****** (function to assign values to cards)  *****************************************************
 
 
@@ -128,12 +114,13 @@ function shuffleArray(values) {
 
 
 
-/*  ************  (update board) *******************/
+/*  ************  (reset board) *******************/
 
 
+function resetGame(){
+   init();
 
-
-
+}
 
 
 
@@ -210,10 +197,13 @@ document.addEventListener('DOMContentLoaded', function() {
     init();
 });
 
+
 // ********* click board ******************************************
 boardArray.forEach(card => {
     card.addEventListener('click', handleClick);
 
 });
+
+document.getElementById('reset').addEventListener('click', resetGame);
 
         
