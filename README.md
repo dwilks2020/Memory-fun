@@ -37,23 +37,32 @@ Here's a simplified breakdown of how the game works:
    - If all pairs are matched, display a win message.
    - If attempts reach 8 and not all pairs are found, display a lose message.
 
-### Functions
+### Technologies Used
 
-Here's a brief overview of the key functions in the game:
+- **JavaScript**: For game logic and interactions.
+- **HTML**: For structure and layout.
+- **CSS**: For styling and layout.
 
-- **`shuffleCards()`**: Shuffles the cards so they are randomly arranged each time you play.
-- **`renderCards()`**: Displays the cards on the board, initially face down.
-- **`flipCard(card)`**: Flips a card to reveal its face.
-- **`checkMatch()`**: Checks if the two selected cards are a match and updates the game accordingly.
-- **`resetPicks()`**: Resets the selected cards after each attempt.
-- **`updateAttempts()`**: Updates and displays the number of remaining attempts.
-- **`displayMessage(message)`**: Shows win or lose messages based on the game's outcome.
+### Deployment
 
-## How to Play
+You can play the game [here](https://dwilks2020.github.io/Memory-fun/).
 
-1. **Start the Game**: Open `index.html` in your web browser.
-2. **Play**: Click on cards to reveal them. Try to match pairs before running out of attempts.
-3. **Win or Lose**: After matching all pairs or exhausting your attempts, you'll see a message telling you if you won or lost.
+### Planning Materials
 
+You can review the planning materials [here](https://docs.google.com/document/d/137I1fLZgTY10pS2q9FvMz6dxszZEHo0XZvsOCypgK5A/edit?usp=sharing).
 
+### External Resources
+
+- **Card Images**: [Unsplash](https://unsplash.com) for free-to-use images.
+
+### Next Steps
+
+- **Add a Timer**: Introduce a timer to track how long it takes to find all pairs.
+- **High Scores**: Implement a high score feature to record the best times and attempt counts.
+- **Difficulty Levels**: Add different levels of difficulty with more cards and fewer attempts.
+- **Add images** Add images to each card.
+
+### Screenshot/Logo
+
+![Big Brain Card Matching Game](https://freeimage.host/i/dElHPoP)
 
