@@ -1,5 +1,7 @@
 # Big Brain Card Matching Game
 
+
+
 ## Overview
 
 Welcome to the **Big Brain Card Matching Game**! This is a fun and brainy card game where you match pairs of cards. The game features 12 cards with 6 matching pairs. Your goal is to find all the pairs within 8 attempts. Matched cards stay face up, while unmatched cards flip back down after a brief delay. If you match all the pairs, you'll see a "You win" message. If you run out of attempts without finding all the pairs, you'll get a "You lose" message.
@@ -62,7 +64,9 @@ You can review the planning materials [here](https://docs.google.com/document/d/
 - **Difficulty Levels**: Add different levels of difficulty with more cards and fewer attempts.
 - **Add images** Add images to each card.
 
-### Screenshot/Logo
+<p align="center">
+  <img src="https://iili.io/dElHPoP.jpg" alt="Big Brain Card Matching Game" width="300"/>
+</p>
 
-![Big Brain Card Matching Game](https://iili.io/dElHPoP.jpg)
+**Attributions** N/A
 
