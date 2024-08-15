@@ -57,7 +57,7 @@ You can play the game [here](https://dwilks2020.github.io/Memory-fun/).
 
 You can review the planning materials [here](https://docs.google.com/document/d/137I1fLZgTY10pS2q9FvMz6dxszZEHo0XZvsOCypgK5A/edit?usp=sharing).
 
-### External Resources
+### Attribution
 
 - **Card Images**: [Unsplash](https://unsplash.com) for free-to-use images.
 
@@ -70,5 +70,4 @@ You can review the planning materials [here](https://docs.google.com/document/d/
 
 
 
-**Attributions** N/A
 
