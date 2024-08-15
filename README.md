@@ -64,5 +64,5 @@ You can review the planning materials [here](https://docs.google.com/document/d/
 
 ### Screenshot/Logo
 
-![Big Brain Card Matching Game](https://freeimage.host/i/dElHPoP)
+![Big Brain Card Matching Game](https://iili.io/dElHPoP.jpg)
 
