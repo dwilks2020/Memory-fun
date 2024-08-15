@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://iili.io/dElHPoP.jpg" alt="Big Brain Card Matching Game" width="300"/>
+</p>
+
 # Big Brain Card Matching Game
 
 
@@ -64,9 +68,7 @@ You can review the planning materials [here](https://docs.google.com/document/d/
 - **Difficulty Levels**: Add different levels of difficulty with more cards and fewer attempts.
 - **Add images** Add images to each card.
 
-<p align="center">
-  <img src="https://iili.io/dElHPoP.jpg" alt="Big Brain Card Matching Game" width="300"/>
-</p>
+
 
 **Attributions** N/A
 
